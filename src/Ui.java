@@ -8,7 +8,7 @@ public class Ui {
                 if (pieces[i][j] == null) {
                     System.out.print("- ");
                 } else {
-                    System.out.print(pieces[i][j]);
+                    System.out.print(pieces[i][j] + " ");
                 }
             }
             System.out.println();
