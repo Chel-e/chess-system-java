@@ -1,12 +1,10 @@
 package Chess;
 
 import Boardgame.Board;
-import Boardgame.Position;
 import pieces.King;
 import pieces.Rock;
 
 public class ChessMetch {
-    private static final Color WHITE = null;
     private Board board;
 
     public ChessMetch() {
@@ -23,8 +21,11 @@ public class ChessMetch {
         }
         return mat;
     } 
-        public void initialSetup() {
-        board.placePiece(new Rock(board, WHITE), new Position(2,1));
-        board.placePiece(new King(board, WHITE), new Position(2,1));
+    private void PlaceNewPiece(char column, int row, ChessPiece piece) {
+        board.placePiece(piece, new ChessPosition(column, row).toPosition());
+    }
+    public void initialSetup() {
+        PlaceNewPiece('b', 6, new Rock(board, Color.WHITE));
+        PlaceNewPiece('e', 8, new King(board, Color.WHITE));
     }
 }
