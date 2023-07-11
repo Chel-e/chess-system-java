@@ -25,7 +25,17 @@ public class ChessMetch {
         board.placePiece(piece, new ChessPosition(column, row).toPosition());
     }
     public void initialSetup() {
-        PlaceNewPiece('b', 6, new Rock(board, Color.WHITE));
-        PlaceNewPiece('e', 8, new King(board, Color.WHITE));
+        PlaceNewPiece('c', 1, new Rock(board, Color.WHITE));
+        PlaceNewPiece('c', 2, new Rock(board, Color.WHITE));
+        PlaceNewPiece('d', 2, new Rock(board, Color.WHITE));
+        PlaceNewPiece('e', 2, new Rock(board, Color.WHITE));
+        PlaceNewPiece('e', 1, new Rock(board, Color.WHITE));
+        PlaceNewPiece('d', 1, new King(board, Color.WHITE));
+        PlaceNewPiece('c', 7, new Rock(board, Color.BLACK));
+        PlaceNewPiece('c', 8, new Rock(board, Color.BLACK));
+        PlaceNewPiece('d', 7, new Rock(board, Color.BLACK));
+        PlaceNewPiece('e', 7, new Rock(board, Color.BLACK));
+        PlaceNewPiece('e', 8, new Rock(board, Color.BLACK));
+        PlaceNewPiece('d', 8, new King(board, Color.BLACK));
     }
 }
