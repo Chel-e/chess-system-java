@@ -9,6 +9,7 @@ import Boardgame.Board;
 import Boardgame.Piece;
 import Boardgame.Position;
 import pieces.King;
+import pieces.Pawn;
 import pieces.Rook;
 
 public class ChessMatch {
@@ -54,12 +55,29 @@ public class ChessMatch {
         piecesOnTheBoard.add(piece);
     }
     public void initialSetup() {
-        PlaceNewPiece('h', 7, new Rook(board, Color.WHITE));
-        PlaceNewPiece('d', 1, new Rook(board, Color.WHITE));
+        PlaceNewPiece('a', 1, new Rook(board, Color.WHITE));
         PlaceNewPiece('e', 1, new King(board, Color.WHITE));
+        PlaceNewPiece('h', 1, new Rook(board, Color.WHITE));
+        PlaceNewPiece('a', 2, new Pawn(board, Color.WHITE));
+        PlaceNewPiece('b', 2, new Pawn(board, Color.WHITE));
+        PlaceNewPiece('c', 2, new Pawn(board, Color.WHITE));
+        PlaceNewPiece('d', 2, new Pawn(board, Color.WHITE));
+        PlaceNewPiece('e', 2, new Pawn(board, Color.WHITE));
+        PlaceNewPiece('f', 2, new Pawn(board, Color.WHITE));
+        PlaceNewPiece('g', 2, new Pawn(board, Color.WHITE));
+        PlaceNewPiece('h', 2, new Pawn(board, Color.WHITE));
 
-        PlaceNewPiece('b', 8, new Rook(board, Color.BLACK));
-        PlaceNewPiece('a', 8, new King(board, Color.BLACK));
+        PlaceNewPiece('a', 8, new Rook(board, Color.BLACK));
+        PlaceNewPiece('e', 8, new King(board, Color.BLACK));
+        PlaceNewPiece('h', 8, new Rook(board, Color.BLACK));
+        PlaceNewPiece('a', 7, new Pawn(board, Color.BLACK));
+        PlaceNewPiece('b', 7, new Pawn(board, Color.BLACK));
+        PlaceNewPiece('c', 7, new Pawn(board, Color.BLACK));
+        PlaceNewPiece('d', 7, new Pawn(board, Color.BLACK));
+        PlaceNewPiece('e', 7, new Pawn(board, Color.BLACK));
+        PlaceNewPiece('f', 7, new Pawn(board, Color.BLACK));
+        PlaceNewPiece('g', 7, new Pawn(board, Color.BLACK));
+        PlaceNewPiece('h', 7, new Pawn(board, Color.BLACK));
     }
     public ChessPiece performChessMove(ChessPosition sourcePosition, ChessPosition targetPosition) {
 		Position source = sourcePosition.toPosition();
