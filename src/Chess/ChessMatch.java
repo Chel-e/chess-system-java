@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 import Boardgame.Board;
 import Boardgame.Piece;
 import Boardgame.Position;
+import pieces.Bishop;
 import pieces.King;
 import pieces.Pawn;
 import pieces.Rook;
@@ -56,7 +57,9 @@ public class ChessMatch {
     }
     public void initialSetup() {
         PlaceNewPiece('a', 1, new Rook(board, Color.WHITE));
+        PlaceNewPiece('c', 1, new Bishop(board, Color.WHITE));
         PlaceNewPiece('e', 1, new King(board, Color.WHITE));
+        PlaceNewPiece('f', 1, new Bishop(board, Color.WHITE));
         PlaceNewPiece('h', 1, new Rook(board, Color.WHITE));
         PlaceNewPiece('a', 2, new Pawn(board, Color.WHITE));
         PlaceNewPiece('b', 2, new Pawn(board, Color.WHITE));
@@ -68,7 +71,9 @@ public class ChessMatch {
         PlaceNewPiece('h', 2, new Pawn(board, Color.WHITE));
 
         PlaceNewPiece('a', 8, new Rook(board, Color.BLACK));
+        PlaceNewPiece('c', 8, new Bishop(board, Color.BLACK));
         PlaceNewPiece('e', 8, new King(board, Color.BLACK));
+        PlaceNewPiece('f', 8, new Bishop(board, Color.BLACK));
         PlaceNewPiece('h', 8, new Rook(board, Color.BLACK));
         PlaceNewPiece('a', 7, new Pawn(board, Color.BLACK));
         PlaceNewPiece('b', 7, new Pawn(board, Color.BLACK));
@@ -87,7 +92,7 @@ public class ChessMatch {
 		Piece capturedPiece = makeMove(source, target);
         if (testCheck(getCurrentPlayer())) {
             undoMove(source, target, capturedPiece);
-            throw new ChessException("you can´t put yourself in check");
+            throw new ChessException("you can`t put yourself in check");
         }
         check = (testCheck(Opponent(getCurrentPlayer()))) ? true : false;
 		if (testCheckMate(Opponent(currentPlayer))) {
