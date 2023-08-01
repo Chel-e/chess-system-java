@@ -1,6 +1,5 @@
 package Chess;
 
-import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -293,8 +292,8 @@ public class ChessMatch {
         if(promoted == null) {
             throw new IllegalStateException("there is no piece to be promoted");
         }
-        if (type.equals("B") && type.equals("Q") && type.equals("N") && type.equals("R")) {
-            throw new InvalidParameterException("Invalid type for Promotion");
+        if (!type.equals("B") && !type.equals("Q") && !type.equals("N") && !type.equals("R")) {
+            return promoted;
         }
         Position pos = promoted.getChessPosition().toPosition();
         Piece p = board.removePiece(pos);
